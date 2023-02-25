@@ -2,24 +2,14 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: '/login',
-    name: 'Login',
+    path: '/',
+    name: 'Index',
     meta: {
-        title: '登录',
-        keepAlive: true,
-        requireAuth: false
+      title: '首页',
+      keepAlive: true,
+      requireAuth: true
     },
-    component: () => import('@/pages/login.vue')
-  },
-  {
-      path: '/',
-      name: 'Index',
-      meta: {
-          title: '首页',
-          keepAlive: true,
-          requireAuth: true
-      },
-      component: () => import('@/pages/index.vue')
+    component: () => import('@/pages/index.vue')
   },
 ]
 
