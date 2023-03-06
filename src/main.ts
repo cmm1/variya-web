@@ -7,4 +7,4 @@ import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import './styles/index.scss'
 
-createApp(App).use(ElementPlus).use(router).use(store).mount('#app')
+createApp(App).use(router).use(ElementPlus).use(store).mount('#app')

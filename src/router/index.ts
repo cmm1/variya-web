@@ -1,15 +1,10 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
+import { createRouter, createWebHistory} from 'vue-router';
 
-const routes: Array<RouteRecordRaw> = [
+const routes = [
   {
     path: '/',
     name: 'Index',
-    meta: {
-      title: '首页',
-      keepAlive: true,
-      requireAuth: true
-    },
-    component: () => import('@/pages/index.vue')
+    component: () => import('../pages/index.vue')
   },
 ]
 
