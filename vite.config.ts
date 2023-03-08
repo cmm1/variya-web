@@ -4,6 +4,14 @@ import * as path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+    build: {
+        rollupOptions: {
+            input: 'src/main.js'
+        }
+    },
+    optimizeDeps: {
+        include: ['lodash']
+    },
     resolve: {
         //设置别名
         alias: {
@@ -13,7 +21,6 @@ export default defineConfig({
     plugins: [vue()],
     server: {
         port: 5173, //启动端口
-        //host:'0.0.0.0',
         hmr: {
             host: '127.0.0.1',
             port: 5173
@@ -26,11 +33,6 @@ export default defineConfig({
                 secure: false, // 请求是否为https
                 rewrite: (path: string) => path.replace(/^\/api/, '')
             }
-            // '/url': {
-            //     target: 'your https address',
-            //     changeOrigin: true,
-            //     rewrite: (path: string) => path.replace(/^\/url/, '')
-            // }
         }
     }
 });
